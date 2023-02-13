@@ -1,0 +1,189 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    min-height: 100vh;
+    /* scroll-behavior: smooth; */
+    font-family: sans-serif;
+}
+
+/* Navigation Bar Styling */
+
+.nav-container {
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    background: var(--navigation-gradient);
+    position: sticky;
+    z-index: 5;
+    top: 0;
+}
+
+.title {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: var(--title-backdrop-color);
+    opacity: 0;
+    font-size: 2em;
+    position: static;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--navigation-gradient);
+    width: 100%;
+    top: 0px;
+    left: 0;
+    height: 10vh;
+}
+
+.nav-title {
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.nav-links {
+    display: inline;
+    vertical-align: bottom;
+    margin: 0;
+    padding-right: 10%;
+    float: right;
+}
+
+.nav-links a {
+    font-family: monospace;
+    font-size: 1.5em;
+    transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: gray;
+    border-radius: 10%;
+    margin-left: 7vw;
+    border: double 4px gray;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+}
+
+.nav-links a:hover {
+    background-color: rgba(60, 60, 60, 0.4);
+    color: whitesmoke;
+    filter: brightness(1.2);
+}
+
+.nav-links a:active {
+    filter: brightness(0.8);
+    transform: scale(1.3);
+}
+
+/* Body Styling */
+
+main {
+    background: linear-gradient(to bottom, 0% darkblue, 100%whitesmoke);
+    color: white;
+}
+
+
+.back-to-top {
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: var(--color-primary);
+    height: 10vh;
+    width: 10vh;
+    z-index: 2;
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+    display: block;
+}
+
+.down {
+    transition: 1s;
+    position: relative;
+    left: 17.5%;
+    top: 8%;
+    margin: 0 auto;
+    border: solid var(--color-secondary);
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 25%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transition: 1s;
+    position: relative;
+    left: 17.5%;
+    top: 32%;
+    margin: 0 auto;
+    border: solid blueviolet;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 25%;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+        transform: translate(-15px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.parallax-area {
+    background-image: url(reef_1.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.parallax-area * {
+    transition: 1s;
+}
+
+.parallax-area-loaded {
+    padding-right: 0;
+    padding-left: 0;
+    background-color: var(--title-backdrop-color);
+    font-size: 2em;
+    position: static;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20vh;
+    animation: fade_in 1s;
+    opacity: 1;
+}
+
+.back-to-top-fadein {
+    animation: fade_in 1s;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: var(--color-primary);
+    height: 10vh;
+    width: 10vh;
+    z-index: 1;
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+    display: block;
+}

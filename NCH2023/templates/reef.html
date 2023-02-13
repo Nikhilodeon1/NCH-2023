@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reef Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+     /* Remove the navbar's default margin-bottom and rounded borders */ 
+     .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    nav:hover {
+        color:white
+    }
+
+    nav {
+        color:white
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+    html {
+        overflow: hidden;
+    }
+    .navbar {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    background-image: linear-gradient(to right, #00ff55 , rgb(0, 217, 255));
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  </style>
+</head>
+{% if state == 'bad' %}
+<body style="background:#ee1919">
+{% endif %}
+{% if state == 'ok' %}
+<body style="background:#ffda00">
+{% endif %}
+{% if state == 'cool' %}
+<body style="background:#00c347">
+{% endif %}
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='favicon.ico')}}" alt="idk" width="40px"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li style="margin-right:620px"><a href="/"><h4>Reef Tracker</h4></a></li>
+          <li><a href="#sus">The #1 Reef Survival Tracker</a></li>
+      </div>
+    </div>
+  </nav>
+    <div style="border:2px solid black;position:absolute">
+      <br><br><br><br>
+    </div>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="padding-top:5%">
+        <h3 style="color:#f1f1f1">idk help</h3>
+        <h3>The Data:</h3><hr style="border:1px solid grey">
+        Name: {{ name }}<hr style="border:1px solid grey">
+        Location: {{ c }}<hr style="border:1px solid grey">
+        <div style="background: white;border-radius:15px;border:2px solid black;position:absolute;width:120%;margin-left:625px;padding:5px;text-align:center;top:300px">
+{% if state == 'bad' %}
+<h3>BAD</h3><hr style="border:1px solid grey">
+<h5>This reef is endangered.<br><a href="https://oceanservice.noaa.gov/facts/coral_bleach.html">more info</a></h5>
+{% endif %}
+{% if state == 'ok' %}
+<h3>ALRIGHT</h3><hr style="border:1px solid grey">
+<h5>This reef is close to being endangered.<br><a href="https://oceanservice.noaa.gov/facts/coral_bleach.html">more info</a></h5>
+
+{% endif %}
+{% if state == 'cool' %}
+<h3>GOOd</h3><hr style="border:1px solid grey">
+<h5>This reef is not endangered yet.<br><a href="https://oceanservice.noaa.gov/facts/coral_bleach.html">more info</a></h5>
+
+{% endif %}
+        </div>
+        Percent Bleached: {{ bl }}<hr style="border:1px solid grey">
+        Exposure: {{ e }}/1000<hr style="border:1px solid grey">
+        Temperature(Kelvin): {{ tk }}<hr style="border:1px solid grey">
+        Age(Years): {{ dy }}
+      </div>
+    </div>
+
+</body>
+</html>
