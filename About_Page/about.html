@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" style="--bg-pos: center; --color-primary: #00ff55;
+--color-secondary: rgb(0, 217, 255);
+--title-backdrop-color: linear-gradient(20% rgba(255, 255, 255, 0.4), 80% rgba(255, 255, 255, 0.4));
+--navigation-gradient: linear-gradient(to right, var(--color-primary), var(--color-secondary));">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Our Project</title>
+	<link rel="stylesheet" href="Assets/style.css">
+	<link rel="stylesheet" href="Assets/main.css">
+	<script src="Assets/index.js" defer></script>
+</head>
+
+<body>
+	<div class="back-to-top">
+		<div class="down"></div>
+	</div>
+	<article id="article1"></article>
+	<div class="parallax-area">
+		<!--Landing area-->
+		<div class="titles-container">
+			<h1 class="title">For hundreds of years, humans far and wide have enjoyed the beauty and serenity of coral
+				reefs. But this beauty is under attack. </h1>
+			<h1 class="title">
+				<a target="_blank"
+					href="https://www.weforum.org/agenda/2022/10/climate-crisis-puts-half-of-reefs-at-risk-by-2035/"
+					style="text-decoration: none; color: white;">By 2035, Over half of our reefs could be destroyed</a>
+			</h1>
+			<h1 class="title" style="color: white; margin-bottom: 0; text-align: center; backdrop-filter: blur(5px);">
+				And like many things,
+				climate change is to blame</h1>
+			<!--Padding--->
+		</div>
+		<div style="padding-bottom: 20%;"></div>
+	</div>
+	<hr>
+	<div id="nav-container" class="nav-container">
+		<nav>
+			<div class="nav-title">
+				<h1>[PROJECT TITLE]</h1>
+			</div>
+			<div class="nav-links">
+				<a href="#">HOME</a>
+				<a href="#">VIEWER</a>
+				<a href="javascript:changer('article5')">CONTACT</a>
+			</div>
+		</nav>
+	</div>
+	<div class="main-container">
+		<main>
+			<div class="padder" style="left:10vw">
+			</div>
+			<article class="boxed-articles" id="article2">
+				<!-- Our Viewer -->
+				<h1 data-text="Why is this happening?" class="typewrite"></h1>
+				<hr class="article-dividers">
+				<p>The climate crisis is an existential threat to coral. The algae in the coral get expelled when the
+					coral is under stress. This is called <b>Bleaching</b> and leaves the
+					coral gray and white.</b></p>
+			</article>
+			<div class="padder" style="left:38vw"></div>
+			<article class="boxed-articles" style="left:38vw !important;" id="article3">
+				<h1 data-text="Is Coral Bleaching Bad?" class="typewrite"></h1>
+				<hr class="article-dividers">
+				<p>
+					While coral can recover from bleaching, it's still very bad. The algae in the coral, called
+					zooxanthellae, are the coral's main source of food and color. Without them, the coral has a very
+					high chance of starving.
+				</p>
+			</article>
+			<div class="padder" style="left:30vw; transform: rotate(30deg);"></div>
+			<article class="boxed-articles" id="article4">
+				<h1 class="typewrite" data-text="About The Team"></h1>
+				<hr class="article-dividers">
+				<ul class="team-ul">
+					<li class="team-li">
+						<details class="team-details">
+							<summary>wargraver</summary>
+							<p>I'm a student that knows a lot about computers.I can help you in C, web, python,
+								(ba/z/k/)sh, and various other low-level constructs</p>
+						</details>
+					</li>
+					<li class="team-li">
+						<details class="team-details">
+							<summary>Swifty</summary>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates nisi totam fugiat!
+							</p>
+						</details>
+					</li>
+				</ul>
+			</article>
+			<div class="padder" style="left:10vw"></div>
+			<article class="boxed-articles" id="article5">
+				<h1 data-text="Contact Us Directly" class="typewrite"></h1>
+				<hr class="article-dividers">
+				<form action="contact.php" id="contactus" method="post" onsubmit="return validate_form(this)">
+					<input placeholder="Your Name" name="name" minlength="5" maxlength="16" required>
+					<input placeholder="Your E-mail (not required)" name="email" minlength="4" maxlength="128">
+					<br>
+					<textarea oninput="if(this.value.length > 1025){
+						this.value = this.value.slice(0, 1024)
+						} else {
+							document.querySelector('#chars_used').innerText = `Characters used: ${this.value.length}/1024`
+						}" rows="10" cols="40" title="Drag the bottom right to resize" placeholder="Your feedback" maxlength="256"
+						name="feedback" required></textarea>
+					<label id="chars_used" for="feedback">Characters used: 0/1024</label>
+					<br>
+					<input id="submit_btn" type="submit" value="Submit">
+				</form>
+			</article>
+			<div class="padder" style="border: transparent; padding-bottom: 30vh !important"></div>
+		</main>
+		<dialog style="position: fixed; left:33vh; padding-left: 10%; padding-right: 10%;">
+			<h1>Image Credits</h1>
+			<h3>All images property and &copy; of their respective authors. </h3>
+			<ol>
+				<li>
+					<img width="480" height="270" src="https://static.dw.com/image/62703239_1006.jpg" />
+					<figcaption><i>Gotten from <a
+								href="https://www.dw.com/en/australia-parts-of-great-barrier-reef-record-highest-coral-cover-in-36-years/a-62703152">DW</a>
+							&copy; Great Barrier Reef Foundation/dpa/picture alliance
+						</i>
+					</figcaption>
+				</li>
+				<li>
+					<img width="480" height="270"
+						src="https://www.barrierreef.org/generated/1920w-16-9/coral-bleaching-at-heron-island.jpg?1634332855" />
+					<figcaption><i>Gotten from <a
+								href="https://www.climatechangenews.com/2016/08/17/visitors-rush-to-the-great-barrier-reef-to-catch-it-before-its-gone/">Climate
+								Home News</a>
+							&copy; Catlin Seaview Survey/Underwater Earth
+						</i>
+					</figcaption>
+				</li>
+				<li>
+					<img width="480" height="270"
+						src="https://www.denverpost.com/wp-content/uploads/2016/05/afp_aw4lc.jpg?w=1280" />
+					<figcaption><i>Gotten from <a
+								href="https://www.denverpost.com/2016/05/30/bleaching-kills-third-of-coral-in-great-barrier-reefs-north/">The
+								Denver Post</a>
+							&copy; Matt Curnock, AFP, Getty Images
+						</i>
+					</figcaption>
+				</li>
+			</ol>
+			<button style="position: absolute; left:1%; cursor:pointer; width: 20%;"
+				onclick="this.parentElement.close()">Close Box</button>
+		</dialog>
+		<footer id="footer">
+			<h1>[PROJECT TITLE]</h1>
+			<ol>
+				<li>
+					<a href="javascript:document.querySelector('dialog').showModal()">Image Credits</a>
+				</li>
+				<li>Do not distribute. Do not use commercially.</li>
+				<li>Made for <a target="_blank" href="https://norcalhacks.org">Nor Cal Spring Hacks 2023</a></li>
+				<li>Authors (Discord Tags): wargraver_client#5186, Swifty#2432, Special thanks to Mr. Shark Spam
+					Bot#4109</li>
+		</footer>
+	</div>
+</body>
+
+</html>
